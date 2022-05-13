@@ -1,7 +1,7 @@
 {
   "name": "codemonauts/craft-iban-field",
   "description": "Craft CMS plugin to store, validate and format IBAN codes.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "craft-plugin",
   "keywords": [
     "craft",
@@ -23,7 +23,7 @@
     "issues": "https://github.com/codemonauts/craft-iban-field/issues"
   },
   "require": {
-    "craftcms/cms": "^3.0.0",
+    "craftcms/cms": "^4.0.0",
     "jschaedl/iban-validation": "^1.5.0"
   },
   "autoload": {
@@ -34,9 +34,6 @@
   "extra": {
     "handle": "iban",
     "class": "codemonauts\\iban\\Iban",
-    "name": "IBAN Field",
-    "description": "Field to store, validate and format IBAN codes.",
-    "hasCpSection": false,
-    "hasSettings": false
+    "name": "IBAN Field"
   }
 }

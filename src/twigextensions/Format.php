@@ -8,12 +8,12 @@ use Twig\TwigFilter;
 
 class Format extends AbstractExtension
 {
-    public function getName()
+    public function getName(): string
     {
         return 'IBAN formating';
     }
 
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('iban', [$this, 'iban']),

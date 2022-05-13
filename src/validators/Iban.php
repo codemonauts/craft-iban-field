@@ -12,7 +12,7 @@ class Iban extends Validator
     /**
      * @inheritdoc
      */
-    public function validateValue($value)
+    public function validateValue($value): ?array
     {
         $iban = new IbanModel($value);
 
@@ -23,7 +23,7 @@ class Iban extends Validator
             'violation.invalid_checksum' => Craft::t('iban', 'The checksum of the given IBAN is not valid.'),
         ]);
 
-        if ($iban && !$validator->validate($iban)) {
+        if (!$validator->validate($iban)) {
             $errors = $validator->getViolations();
             return [$errors[0], []];
         }

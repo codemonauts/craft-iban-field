@@ -6,17 +6,13 @@ use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\base\PreviewableFieldInterface;
+use craft\helpers\Cp;
 use yii\db\Schema;
 use codemonauts\iban\validators\Iban as IbanValidator;
 use Iban\Validation\Iban as IbanModel;
 
 class Iban extends Field implements PreviewableFieldInterface
 {
-    /**
-     * @var string The type of database column the field should have in the content table
-     */
-    public $columnType = Schema::TYPE_STRING;
-
     /**
      * @inheritdoc
      */
@@ -30,7 +26,7 @@ class Iban extends Field implements PreviewableFieldInterface
      */
     public function getContentColumnType(): string
     {
-        return $this->columnType;
+        return Schema::TYPE_STRING;
     }
 
     /**
@@ -38,12 +34,11 @@ class Iban extends Field implements PreviewableFieldInterface
      */
     public function getInputHtml($value, ElementInterface $element = null): string
     {
-        return Craft::$app->getView()->renderTemplate('_includes/forms/text',
-            [
-                'name' => $this->handle,
-                'value' => $value,
-                'field' => $this,
-            ]);
+        return Cp::textFieldHtml([
+            'name' => $this->handle,
+            'value' => $value,
+            'field' => $this,
+        ]);
     }
 
     /**

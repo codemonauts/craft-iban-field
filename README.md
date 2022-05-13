@@ -1,4 +1,4 @@
-# IBAN Field for Craft CMS 3.x
+# IBAN Field for Craft CMS
 
 ![Icon](resources/iban.png)
 
@@ -12,7 +12,7 @@ This plugin adds a field type to store and validate IBAN codes. It provides a Tw
 
 ## Requirements
 
- * Craft CMS >= 3.0.0
+ * Craft CMS >= 4.0.0
 
 ## Installation
 
